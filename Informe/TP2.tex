@@ -1,0 +1,297 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{enumerate}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+
+\setlength{\parskip}{1.5ex}
+%++++++++++++++++++++++++++++++++++
+%para agregar codigos de programas:
+\usepackage{listings}
+
+\lstset{literate=
+  {¡}{{!`}}1  {¿}{{¿`}}1
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {?}{{\oe}}1 {?}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {?}{{\H{u}}}1 {?}{{\H{U}}}1 {?}{{\H{o}}}1 {?}{{\H{O}}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {?}{{\EUR}}1 {£}{{\pounds}}1
+}
+
+\lstset{extendedchars=\true,
+    linewidth=\textwidth,
+    inputencoding=utf8x,
+    language=[ANSI]C,
+    xleftmargin=5pt,
+    xrightmargin=5pt,
+    breaklines=true,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=5pt,
+    tabsize=4,showtabs=false,
+    numbers=left,%      Que haya nÃºmeros a la izquierda (nÃºmero de linea)
+    basicstyle=\ttfamily\small,%    Estilo bÃ¡sico de la tipografÃ­a del cÃ³digo
+    commentstyle=\color{Gray},%     Color de los comentarios
+    showstringspaces=false,%        Los espacios no se ven de forma especial
+    %stringstyle=\color{BrickRed},%  Estilo de las cadenas
+    %keywordstyle=\color{ForestGreen},%  Estilo de las palabras reservadas
+    morekeywords=[1]{size_t,ssize_t},%  DefiniciÃ³n de mÃ¡s palabras reservadas
+    deletekeywords={typedef,enum,do,while,if,else,for,case,default,switch,break,continue},%
+        keywords=[2]{typedef,enum,do,while,if,else,for,case,default,switch,break,continue,EXIT_SUCCESS,EXIT_FAILURE},
+    %keywordstyle=[2]{\color{BurntOrange}},% 2do grupo de palabras reservadas
+        directives={define,undef,include,if,else,ifndef,ifdef,elif,endif},%
+    %directivestyle=\color{NavyBlue},%       Estilo de directivas
+    keywords=[3]{define,undef,include,if,else,ifndef,ifdef,elif,endif},%
+    %keywordstyle=[3]{\color{MidnightBlue}},%3er grupo de palabras reservadas
+    %morecomment=[s][\color{Gray}]{/*}{*/}%  DefiniciÃ³n de estilo de comentario
+    }
+
+%++++++++++++++++++++++++++++++++++
+\usepackage{color}
+\definecolor{Apricot}{RGB}{253,199,130}
+\definecolor{Aquamarine}{RGB}{0,181,202}
+\definecolor{Bittersweet}{RGB}{192,79,23}
+\definecolor{Black}{RGB}{0,0,0}
+\definecolor{Blue}{RGB}{0,0,255}
+\definecolor{BlueGreen}{RGB}{0,179,184}
+\definecolor{BlueViolet}{RGB}{71,57,146}
+\definecolor{BrickRed}{RGB}{182,50,28}
+\definecolor{Brown}{RGB}{121,37,0}
+\definecolor{BurntOrange}{RGB}{247,146,29}
+\definecolor{CadetBlue}{RGB}{116,114,154}
+\definecolor{CarnationPink}{RGB}{242,130,180}
+\definecolor{Cerulean}{RGB}{0,162,227}
+\definecolor{CornflowerBlue}{RGB}{65,176,228}
+\definecolor{Cyan}{RGB}{0,174,239}
+\definecolor{Dandelion}{RGB}{253,188,66}
+\definecolor{DarkOrchid}{RGB}{164,83,138}
+\definecolor{Emerald}{RGB}{0,169,157}
+\definecolor{ForestGreen}{RGB}{0,155,85}
+\definecolor{Fuchsia}{RGB}{140,54,140}
+\definecolor{Goldenrod}{RGB}{255,223,66}
+\definecolor{Gray}{RGB}{148,150,152}
+\definecolor{Green}{RGB}{0,166,79}
+\definecolor{GreenYellow}{RGB}{223,230,116}
+\definecolor{JungleGreen}{RGB}{0,169,154}
+\definecolor{Lavender}{RGB}{244,158,196}
+\definecolor{LimeGreen}{RGB}{141,199,62}
+\definecolor{Magenta}{RGB}{236,0,140}
+\definecolor{Mahogany}{RGB}{169,52,31}
+\definecolor{Maroon}{RGB}{175,50,53}
+\definecolor{Melon}{RGB}{248,158,123}
+\definecolor{MidnightBlue}{RGB}{0,103,149}
+\definecolor{Mulberry}{RGB}{169,60,147}
+\definecolor{NavyBlue}{RGB}{0,103,149}
+\definecolor{OliveGreen}{RGB}{60,128,49}
+\definecolor{Orange}{RGB}{245,129,55}
+\definecolor{OrangeRed}{RGB}{237,19,90}
+\definecolor{Orchid}{RGB}{175,114,176}
+\definecolor{Peach}{RGB}{247,150,90}
+\definecolor{Periwinkle}{RGB}{121,119,184}
+\definecolor{PineGreen}{RGB}{0,139,114}
+\definecolor{Plum}{RGB}{146,38,143}
+\definecolor{ProcessBlue}{RGB}{0,176,240}
+\definecolor{Purple}{RGB}{153,71,155}
+\definecolor{RawSienna}{RGB}{151,64,6}
+\definecolor{Red}{RGB}{237,27,35}
+\definecolor{RedOrange}{RGB}{242,96,70}
+\definecolor{RedViolet}{RGB}{161,36,107}
+\definecolor{Rhodamine}{RGB}{239,85,159}
+\definecolor{RoyalBlue}{RGB}{0,113,188}
+\definecolor{RoyalPurple}{RGB}{97,63,153}
+\definecolor{RubineRed}{RGB}{237,1,125}
+\definecolor{Salmon}{RGB}{246,146,137}
+\definecolor{SeaGreen}{RGB}{63,188,157}
+\definecolor{Sepia}{RGB}{103,24,0}
+\definecolor{SkyBlue}{RGB}{70,197,221}
+\definecolor{SpringGreen}{RGB}{198,220,103}
+\definecolor{Tan}{RGB}{218,157,118}
+\definecolor{TealBlue}{RGB}{0,174,179}
+\definecolor{Thistle}{RGB}{216,131,183}
+\definecolor{Turquoise}{RGB}{0,180,206}
+\definecolor{Violet}{RGB}{88,66,155}
+\definecolor{VioletRed}{RGB}{239,88,160}
+\definecolor{White}{RGB}{255,255,255}
+\definecolor{WildStrawberry}{RGB}{238,41,103}
+\definecolor{Yellow}{RGB}{255,242,0}
+\definecolor{YellowGreen}{RGB}{152,204,112}
+\definecolor{YellowOrange}{RGB}{250,162,26}
+
+%++++++++++++++++++++++++++++++++++
+
+\usepackage{hyperref}
+
+
+
+%++++++++++++++++++++++++++++++++++
+
+\providecommand{\word}[1]{\textbf{\textit{#1}} } %dar formato a palabras especÃ­ficas
+
+\providecommand{\verba}[1]
+{\begin{verbatim}
+{#1}
+\end{verbatim}} %dar formato a funciones
+
+%++++++++++++++++++++++++++++++++++
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{enumerate}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+
+\setlength{\parskip}{1.5ex}
+
+\author{ Alvarez Windey Juan 95242 (juan.alvarezwindey@gmail.com),
+\\Garcia Fernando 97770 (fgrcia94@yahoo.com.ar),
+\\Quiroga Juan Pablo 98040 (quirogajuanp@gmail.com), 
+\\Robles Gabriel 95897
+(gabyrobles93@gmail.com)
+}
+
+\date {}
+\begin{document}
+
+
+
+
+\section{Supuestos}
+
+Para la realización del código se supuso que:
+\begin{itemize}
+\item Las coordenadas de entrada vienen en formato sexagesimales, para posteriormente ser transformadas a radianes
+\item Las coordenadas no pueden tener cualquier valor, sus valores deben encontrarse dentro de un punto físico real.
+\item Cuando se evalúa el costo del paquete esta también agrega los costos adicionales de asistencia al viajero y/o comida especial, para finalmente aplicar los descuentos a el total.
+\item No hay restricciones para los Strings ingresados ya sean nombres, código de ciudad, etc.
+\item Un viaje que contiene un solo vuelo cuenta como un día de viaje.
+\item En el caso de que haya asistencia al viajero y comida especial a bordo, cada uno de los costos agregados es independiente del otro.
+\item La fecha de entrada debe ser anterior a la de salida.
+\item No se debe modificar la clase AlgoTripTest (manejo de excepciones).
+\item Los paquetes no deben contener otros paquetes.
+
+\end{itemize}
+\newpage
+\section{Modelo de dominio}
+Se desarrollaron las siguientes clases para la solución del programa:
+\begin{itemize}
+\item \textbf{AlgoTrip.java} : Es la clase principal y la que se encarga de manejar todo. Tiene como composición colecciones de las clases Vuelo, Ciudades, Hoteles y Paquetes (para los paquetes sueltos). Es la responsable de llamar a las clases pertinentes para usar las funciones más importantes del programa como: obtenerCosto(), agregarVueloEnViaje(), obtenerDuracionEnDiasDelViaje(), etc.
+
+\item \textbf{Viaje.java} : Es la clase más extensa seguida de AlgoTrip, estando compuesta por colecciones de vuelos, estadias, adicionales y paquetes. Sus responsabilidades principales son: cacular el costo del viaje, calcular la duración del viaje y agregar vuelos y estadias. Todo esto lo lleva acabo delegando algunas responsabilidades, con ayuda de otras clases.
+
+\item \textbf{Ciudad.java} : Esta clase contiene toda la información pertinente a una ciudad como el nombre de la misma, su código, el nombre de su país y además la ubicación con los valores de latitud y longitud. Su responsabilidad principal es calcular la distancia entre dos ciudades dadas con la ayuda de la fórmula de Haversine y calcular el tipo de tarifa de un vuelo(nacional o internacional).
+
+\item \textbf{Hotel.java}: Esta clase simplemente es un contenedor de un nombre de hotel asociado a un precio por noche. Su única responsabilidad es guardar y proporcionar esos datos.
+
+\item \textbf{Vuelo.java}: Solo contiene la referencia de la ciudad de partida y la referencia de la ciudad de destino. Su única responsabilidad es relegarle a la clase Ciudad el cálculo del costo del vuelo.
+
+\item \textbf{Estadia.java}: Contiene una referencia a un hotel y la fecha de entrada y salida al mismo. Sus responsabilidad responsabilidades son calcular el costo de la estadía y calcular la duración de la misma en días.
+
+\item \textbf{Adicionales.java}: Es una clase abstracta con dos declaraciones del método modificarCosto() (sobrecarga) una para la asistencia al viajero y la otra para la comida especial.
+  
+\item \textbf{AsistenciaAlViajero.java}: Hereda de la clase Adicional debiendo implementar los métodos de modificarPrecio() y su responsabilidad es modificar el costo de un vuelo y/o una estadía.
+
+\item \textbf{ComidaEspecialABordo.java}: Al igual que asistencia al viajero hereda de Adicional, implementa ambas funciones sobrecargadas y su responsabilidad es modificar el costo de un vuelo y/o estadía.
+
+\item \textbf{Paquete.java}: Esta clase hereda de la clase Viaje, ya que comparté muchos métodos similares y comportamiento (menos la colección de paquetes como atributo). Su responsabilidad es obtener el costo de los vuelos y estadias que se adhieran al paquete, sobreescribiendo el método obtenerCostoDelViaje() para hacerlo de manera distinta a la clase Viaje.
+
+\end{itemize}
+
+Sumado a esto, se creo al principio una clase de test para cada clase individual para ir modelando y corrigiendo el correcto funcionamiento de cada clase. 
+
+También en el modelo se incluyo un paquete con varias clases de excepciones para manejar todos los imprevistos necesarios y que se consideraron relevantes.
+
+
+\section{Diagrama de clases}
+
+En el siguiente diagrama de clases se muestra la interacción entre todas las clases del proyecto. En el mismo se obviaron tanto las variables como los métodos irrelevantes para una mayor comprensión del mismo.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{Diagramadeclase.jpg}
+\caption{Diagrama de clases}
+\end{figure}
+
+
+
+}
+\section{Detalles de implementacion}
+
+Para la realización de este proyecto se tuvieron en cuenta distintas opciones pero siempre en dirección a una solución orientada a objetos en mayor medida posible.
+La clase \textbf{AlgoTrip} (la principal) se implemento con cuatro colecciones de las clases Viaje, Hotel, Ciudad y Paquete. Para ir cargando las colecciones a medida que se agrega un objeto nuevo. Esta clase es la que se encarga de verificar los datos de entradas para, en caso de necesitarlo, lanzar una excepción. Verificando así el valor de las coordenadas, la existencia de los objetos requeridos, la 'lógica' de las fechas y el valor de los precios. También se responsabiliza de la conversión de los Strings a Dates cuando se maneja fechas. Por último, para obtener costos, calcular la duración de viajes y agregar adicionales (asistencia al viajero y comida especial) esta clase delega esa responsabilidad a la clase Viaje (o Paquete).
+
+Dentro de la clase \textbf{Viaje} se agregaron colecciones para vuelos, estadías, adicionales y paquetes. En un primer momento también se intento englobar a los vuelos y estadías en una sola colección de 'Items de Viaje' que iba a ser una clase abstracta de la que heredaban Vuelo y Estadía. Pero debido a problemas de sintaxis y de tiempo se resolvió en dejarlo en dos colecciones por separado. Esta clase se encarga de calcular la duración del viaje en cuestión con la ayuda de la librería \textit{java.util.date}. Además también agrega cualquier tipo de 'adicional' al viaje, para posteriormente modificar el precio del mismo. Por último, para obtener su precio esta clase itera sobre las colecciones de vuelos, estadías y paquetes, y al mismo tiempo, por cada iteración de estas tres colecciones itera toda la colección de adicionales para ir modificando el precio acorde a lo agregado. En última instancia obtiene los costos parciales de los vuelos, las estadías y los paquetes para sumarlos.
+ 
+En la clase \textbf{Vuelo} se optó por poner solo una referencia de la ciudad de partida y la ciudad de destino del vuelo. De modo que, cuando la clase necesita saber el costo del vuelo, le relega a la clase Ciudad el cálculo de la distancia y averiguar si el vuelo es internacional o doméstico.
+
+La clase \textbf{Ciudad} se implementó guardando los nombres de la ciudad, el país y el código de la ciudad. Además contienen los datos de latitud y longitud de la ciudad en cuestión. De este modo, puede calcular la distancia entre una ciudad y otra (con la fórmula de Haversine) y también puede conocer si dos ciudades están en distintos paises
+
+La clase \textbf{Hotel} simplemente es un contenedor de datos, con el nombre del hotel como identificador y el precio por noche del mismo.
+
+En la clase \textbf{Estadia} podemos encontrar una referencia al hotel de donde pertenece la estadía y una fecha de entrada y otra de salida para el cálculo de la duración en días de la estadía que esta misma clase se encarga. También es la que se encarga de calcular el costo de la estadía pidiendo el precio por noche a el hotel que tiene como referencia.
+
+\textbf{Adicional} es una clase abstracta que se implemento de forma que la clase Viaje pueda iterar y pedir modificación de precios de manera polimórfica en su colección de adicionales. Tiene la función abstracta modificarCosto sobrecargada dos veces para que sea implementada por sus clases hijas.
+
+\textbf{AsistenciaAlViajero} y \textbf{ComidaEspecialABordo} son dos clases hijas de la clase adicional y lo que hacen las dos es devolver el valor adicional al vuelo o estadía. Ambas tienen la función modificarCosto implementada dos veces.
+
+Por último la clase \textbf{Paquete} es una clase hija de la clase Viaje, compartiendo todos sus atributos (menos la colección de paquetes como se aclaró en el supuesto) y casi todos sus métodos. Lo único que difiere, es que esta clase tiene sobre escrito el método obtenerCostoDeViaje, comportándose casi de la misma manera pero agregando los descuentos de la clase Paquete. 
+
+
+\section{Excepciones}
+
+En el trabajo se crearon la siguientes clases de expeciones:
+
+\begin{itemize}
+\item \textbf{CoordenadasInvalidadError.java}: Esta excepción fue creada para que las coordenadas que entran como datos tengan su representación en el mundo físico. Todas las funciones que tienen coordenadas como argumentos se llaman internamente a verficarCoordenadas para chequear si es necesario arrojar la excepción.
+
+\item \textbf{FechaInvalidadError.java}: Esta excepción fue creada con el motivo de no tener una fecha de entrada o inicio posterior a una fecha de salida. Se usa dentro de las funciones que agregan nuevas estadías, verificando previamente las fechas.
+
+\item \textbf{InexistenteError.java}: Fue creada para informar sobre la falta de un objeto requerido de cualquier tipo: Viaje, Hotel, Ciudad, etc. Cuando una función pasa como parámetro un nombre de un objeto que no esta incluido en alguna colección de AlgoTrip, entonces esta excepción es arrojada.
+
+\item \textbf{PrecioNegativoError.java}: Para un caso particular se creo esta excepción: verificar que el precio por noche del hotel no sea negativo. No deja de ser importante ya que no tendría sentido un precio menor a cero. Se utiliza cuando se va agregar un hotel.
+\end{itemize}
+
+\newpage
+
+\section{Diagramas de secuencia}
+
+En el siguiente diagrama se muestra como es la secuencia al llamar al método obtenerCostoDelViaje de la clase AlgoTrip.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{Diagramadesecuencia.jpg}
+\caption{Diagrama de secuencia 01}
+\end{figure}
+
+
+
+En el siguiente diagrama (bastante más simple) se puede ver como se agrega un vuelo en la colección que posee la clase Viaje.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.75]{Diagramadesecuencia2.jpg}
+\caption{Diagrama de secuencia 02}
+\end{figure}
+
+
+
+\end{document}
